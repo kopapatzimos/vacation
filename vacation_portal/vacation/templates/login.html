@@ -1,0 +1,37 @@
+<!-- vacation_portal/templates/login.html -->
+{% extends 'base_generic.html' %}
+
+{% block title %}Login - Vacation Portal{% endblock %}
+
+{% block content %}
+  <div class="login-container">
+    <div class="card login-card">
+        <h2 class="text-center mb-4">Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-block login-btn">Login</button>
+            </div>
+            <div class="form-group text-center">
+                <a href="" class="forgot-password">Forgot your password?</a>
+            </div>
+
+            <div class="form-group text-center">
+                <p class="account-text">Don't you have an account?? <a class="link-btn" href="{% url 'signup' %}">Sign Up here</a></p>
+            </div>
+
+
+        </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+<!-- vacation_portal/templates/dashboard.html -->
+{% extends 'base_generic.html' %}
+
+{% block title %}Dashboard - Vacation Portal{% endblock %}
+
+{% block content %}
+  <h1>Welcome to your Dashboard, {{ user.username }}!</h1>
+  <p>This is the landing page after login.</p>
+  <!-- <a href="{% url 'logout' %}">Logout</a> -->
+{% endblock %}

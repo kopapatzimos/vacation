@@ -1,0 +1,83 @@
+/* Set background image for the entire page */
+body {
+
+    height: 100vh;  /* Ensure the body takes up the full height of the viewport */
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Center the login form in the middle of the page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: rgba(75, 30, 30, 0.689); /* Semi-transparent background for the login form */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-card {
+    background: rgba(75, 30, 30, 0.689); /* Semi-transparent background for the login form */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+.form-control {
+    border-radius: 50px;
+}
+
+.login-btn{
+    background-color: #2d98da;
+    border: none;
+    border-radius: 50px;
+}
+
+.login-btn:hover {
+    background-color: #1e7bb5;
+}
+
+
+
+.forgot-password{
+    color: rgb(255, 234, 240);
+}
+
+.forgot-password:hover{
+    color: rgb(126, 242, 255);
+}
+
+.link-btn{
+    color:#acff3f;
+}
+.link-btn:hover{
+    color:#8acb35;
+}
+
+.account-text{
+    font-size: 14px;
+}
+
+.alert{
+    color: rgb(255, 170, 170);
+}
