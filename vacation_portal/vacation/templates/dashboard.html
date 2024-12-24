@@ -1,10 +1,56 @@
 <!-- vacation_portal/templates/dashboard.html -->
+
 {% extends 'base_generic.html' %}
 
 {% block title %}Dashboard - Vacation Portal{% endblock %}
 
 {% block content %}
-  <h1>Welcome to your Dashboard, {{ user.username }}!</h1>
-  <p>This is the landing page after login.</p>
-  <!-- <a href="{% url 'logout' %}">Logout</a> -->
+{% include 'nav.html' %}
+
+  
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card vacation-card mx-auto" style="width: 100%; max-width: 900px;">
+        <div class="card-body">
+            <h4 class="card-title text-dark">Vacation Requests</h4>
+            <a href="{% url 'submit_request' %}" class="btn btn-primary mb-3">Submit New Request</a>
+            
+            <!-- Responsive table wrapper -->
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date Submitted</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for request in vacation_requests %}
+                            <tr>
+                                <td>{{ request.submitted_date }}</td>
+                                <td>{{ request.start_date }}</td>
+                                <td>{{ request.end_date }}</td>
+                                <td>
+                                    {% if request.status == "Approved" %}
+                                        <span class="badge badge-success">{{ request.status }}</span>
+                                    {% elif request.status == "Pending" %}
+                                        <span class="badge badge-warning">{{ request.status }}</span>
+                                    {% else %}
+                                        <span class="badge badge-danger">{{ request.status }}</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="4" class="text-center">No vacation requests found.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  
 {% endblock %}
